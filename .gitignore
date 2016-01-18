@@ -3,7 +3,6 @@
 
 # Front end
 vue/node_modules
-vue/build
 public/app.js
 
 # Logs
