@@ -7,12 +7,8 @@
           span.header
             i.huge.comments.icon
             |  Vue.js + Socket.io Chat example
-          a.item(href='#')
-            i.home.icon
-            | Home
-          a.item(href='#') About
           .right.menu
-            a.item(href='#')
+            a.item(href='https://github.com/jimutt/Vue.js-socket.io-chatroom-example')
               i.large.github.square.icon
               | Github
       
