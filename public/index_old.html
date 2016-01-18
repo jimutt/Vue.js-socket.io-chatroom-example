@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Vue.js + Socket.io chat example</title>
+
+  <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+  <script src="semantic/semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+
+  <div class="ui fixed menu">
+    <div class="ui container">
+      <span class="header">
+                <i class="huge comments icon"></i> Vue.js + Socket.io Chat example
+            </span>
+      <a href="#" class="item"><i class="home icon"></i>Home</a>
+      <a href="#" class="item">About</a>
+      <div class="right menu">
+        <a href="#" class="item"><i class="large github square icon"></i>Github</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui main container">
+    <div class="ui fluid card">
+      <div class="content">
+        <div class="header">Chat</div>
+      </div>
+      <div class="content">
+        <div class="ui divided grid">
+          <div class="row">
+            <div class="four wide column">
+              <h2 id="chat-sidebar-header">Online users</h2>
+            </div>
+            
+            <div class="twelve wide column">
+              <div class="ui six item menu">
+                <a class="item active">No active chat</a>
+              </div>
+            </div>
+            
+            <div class="four wide column chat-sidebar">
+              <div class="ui left aligned green segment">Bertil Olsson <i class="right floated man icon"></i></div>
+            </div>
+            
+            <div class="twelve wide column">
+              <div style="height: 400px;">
+                <app></app>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+        <div class="extra content">
+          <button class="ui button">Join Project</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
