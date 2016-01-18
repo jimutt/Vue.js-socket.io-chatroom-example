@@ -4,7 +4,7 @@
 # Front end
 vue/node_modules
 vue/build
-vue/app.js
+public/app.js
 
 # Logs
 logs *.log npm-debug.log*
