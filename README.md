@@ -5,6 +5,7 @@ The project does by no means display "best practices" or try to showcase the mos
 
 ##Demo
 [http://chatdemo.zot.link/](http://chatdemo.zot.link/)
+
 Log in to the chat from multiple browser tabs to test the chatting functionality with yourself if nobody else is online. 
 
 ##Features
