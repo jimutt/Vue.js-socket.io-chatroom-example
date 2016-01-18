@@ -71,7 +71,7 @@ class ChatServer {
   // Remove logged in user after socket disconnect
   disconnectUser_(socket) {
 
-    console.log('User logged out:' + socket.id);
+    console.log('User logged out:' + socket.id)
 
     // Remove user from onlineUsers list if it's there
     this.onlineUsers.delete(socket.id)
@@ -130,8 +130,9 @@ class ChatServer {
     console.log('Checking if display name ' + name + ' is occupied')
 
     for (var item of this.onlineUsers) {
-      if (item.value == name) return false
+      if (item[1].data.displayName == name) return false
     }
+
     return true
   }
 
@@ -139,7 +140,7 @@ class ChatServer {
   // username and gender fields
   validateLoginData_(data) {
 
-    var err = [];
+    var err = []
 
     console.log('User tried to log in with displayName ' + data.displayName + ' and gender ' + data.gender)
 
@@ -150,7 +151,9 @@ class ChatServer {
       err.push('Your display name needs to be between ' + this.displayNameMinLen_ + ' and ' + this.displayNameMaxLen_ + ' characters long.')
     }
 
-    // TODO: Check if username is free to use  
+    if(!this.displayNameFree_(data.displayName)) {
+      err.push('The displayname is already occupied by an other user')
+    } 
 
     if (err.length > 0) {
       return {
@@ -163,4 +166,4 @@ class ChatServer {
   }
 }
 
-module.exports = ChatServer;
+module.exports = ChatServer
