@@ -59,11 +59,12 @@
             // Main chat window
             .twelve.wide.column
               
-              .row.message-window
-              
-                .chat-message(v-for="message in activeChatSession.messages")
-                  .ui.raised.segment(v-bind:class="{'contact': message.senderId != user.socketId, 'you': message.senderId == user.socketId}")
-                    span {{message.content}}
+              .row.message-window(v-el:chat-msg-window)
+                .div.message-window-content(v-el:chat-msg-window-content)
+                
+                  .chat-message(v-for="message in activeChatSession.messages")
+                    .ui.raised.segment(v-bind:class="{'contact': message.senderId != user.socketId, 'you': message.senderId == user.socketId}")
+                      span {{message.content}}
                 
               .row.chat-textarea(v-if="activeChatSession.socketId")
                 .ui.form
@@ -176,8 +177,12 @@ export default {
           }
         }
 
-        if (this.activeChatSession.socketId != msg.senderId) activeSession.unread = true
-        activeSession.messages.push(msg)
+        if (this.activeChatSession.socketId != msg.senderId) {
+          activeSession.unread = true
+          activeSession.messages.push(msg)
+        } else {
+          this.addMsgToActiveChat(msg)
+        }
 
       })
     },
@@ -214,7 +219,7 @@ export default {
         senderId: this.user.socketId
       }
 
-      this.activeChatSession.messages.push(msg)
+      this.addMsgToActiveChat(msg)
       this.messageContent = ''
 
       this.io.emit('sendMessage', msg)
@@ -237,6 +242,7 @@ export default {
       this.activeChatSession = this.chatSessions.find(cs => cs.socketId == socketId)
       this.activeChatSession.socketId = socketId
       this.activeChatSession.unread = false
+      this.autoScroll()
     },
 
     closeChatSession (socketId, e) {
@@ -246,6 +252,20 @@ export default {
       var sessionIndex = this.chatSessions.findIndex(cs => cs.socketId == socketId)
       if (sessionIndex != -1) this.chatSessions.splice(sessionIndex, 1)
       this.activeChatSession.socketId = null
+    },
+
+    addMsgToActiveChat (msg) {
+
+      this.activeChatSession.messages.push(msg)
+      this.autoScroll()
+    },
+
+    autoScroll () {
+
+      // Not that pretty fix to allow the DOM to update before we autoscroll
+      setTimeout(() => {
+        this.$els.chatMsgWindow.scrollTop = this.$els.chatMsgWindowContent.scrollHeight
+      }, 100)
     },
 
     getGenderClass (gender) {
@@ -306,6 +326,10 @@ body {
       height: 450px;
       overflow-y: scroll;
       overflow-x: auto;
+  }
+  
+  .message-window-content {
+    overflow: hidden;
   }
 
   .chat-message {
