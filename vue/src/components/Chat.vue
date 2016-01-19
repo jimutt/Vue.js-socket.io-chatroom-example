@@ -171,7 +171,9 @@ export default {
         if (!activeSession) {
           this.addChatSession(msg.senderId, msg.senderDisplayName)
           activeSession = this.chatSessions[this.chatSessions.length - 1]
-          if (!this.activeChatSession) this.activeChatSession = activeSession
+          if (!this.activeChatSession.socketId) {
+            this.activeChatSession = activeSession
+          }
         }
 
         if (this.activeChatSession.socketId != msg.senderId) activeSession.unread = true
