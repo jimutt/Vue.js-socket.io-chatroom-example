@@ -23,3 +23,6 @@ Log in to the chat from multiple browser tabs to test the chatting functionality
 
 ##Known bugs
 * If you add too many chat sessions the "session menu" bar will get too large and it will not be displayed correctly
+
+##Contact
+If you have any questions please use the contact details found at http://jimmyutterstrom.com/about/
