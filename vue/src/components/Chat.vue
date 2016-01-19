@@ -250,6 +250,12 @@ export default {
       e.stopPropagation()
 
       var sessionIndex = this.chatSessions.findIndex(cs => cs.socketId == socketId)
+      if (this.activeChatSession.socketId == socketId) {
+        this.activeChatSession = {
+          socketId: null,
+          messages: []
+        }
+      }
       if (sessionIndex != -1) this.chatSessions.splice(sessionIndex, 1)
       this.activeChatSession.socketId = null
     },
