@@ -28,8 +28,8 @@
       // Header
       .content
         .header Chat
-          span.float-right(v-if="user.authenticated") Logged on as: 
-            i{{user.displayName}}
+          span.float-right(v-if="user.authenticated") Logged on as:
+            i {{user.displayName}}
         
       // Content
       .content
@@ -73,6 +73,8 @@
 </template>
 
 <script>
+/* eslint-disable eqeqeq */
+
 export default {
 
   data () {
@@ -241,7 +243,7 @@ export default {
 
       var sessionIndex = this.chatSessions.findIndex(cs => cs.socketId == socketId)
       if (sessionIndex != -1) this.chatSessions.splice(sessionIndex, 1)
-      this.activeChatSession = null
+      this.activeChatSession.socketId = null
     },
 
     getGenderClass (gender) {
@@ -312,7 +314,7 @@ body {
   
   .chat-message > .ui.raised.segment {
     max-width: 90%;
-    overflow-wrap: break-word;    
+    overflow-wrap: break-word;
   }
   
   .ui.raised.segment.contact, .ui.raised.segment.you {
