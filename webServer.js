@@ -4,7 +4,7 @@ var server = require('http').Server(app);
 var ChatServer = require('./chatServer');
 var io = require('socket.io')(server);
 
-server.listen(8080);
+server.listen(1337);
 
 var chat = new ChatServer(io, 100);
 chat.start();
