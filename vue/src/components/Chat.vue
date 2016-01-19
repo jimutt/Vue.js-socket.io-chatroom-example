@@ -90,7 +90,10 @@ export default {
 
       chatSessions: [],
 
-      activeChatSession: null,
+      activeChatSession: {
+        socketId: null,
+        messages: []
+      },
 
       onlineUsers: [],
       messageContent: '',
