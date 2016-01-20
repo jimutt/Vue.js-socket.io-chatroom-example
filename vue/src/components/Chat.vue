@@ -320,6 +320,8 @@ body {
 
 <style>
   .chat-sidebar {
+      max-height: 542px;
+      overflow-y: scroll;
       -webkit-box-shadow: initial !important;
       box-shadow: initial !important;
   }
