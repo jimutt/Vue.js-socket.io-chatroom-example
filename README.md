@@ -1,7 +1,7 @@
 # Vue.js-socket.io-chatroom-example
 This example application consists of a public chat room made with Vue.js, socket.io and Semantic UI. The backend websockets chat server is found inside the **chatServer.js** file. All Vue.js and front-end files are found inside **./vue**.
 
-The project does by no means display "best practices" or try to showcase the most effective way of dealing with socket.io and Vue.js. It's merely an example to give people an idea of how Vue.js and socket.io can be used for interactive real time applications. 
+The project does by no means display "best practices" or try to showcase the most effective way of dealing with socket.io and Vue.js. It's merely an example to give people an idea of how Vue.js and socket.io can be used for interactive real time applications. I have no plans of putting this code into production, whereas I haven't put much effort into good commenting, testing and refactoring. 
 
 ##Demo
 [http://chatdemo.zot.link/](http://chatdemo.zot.link/)
