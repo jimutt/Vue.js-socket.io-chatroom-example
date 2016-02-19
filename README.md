@@ -4,7 +4,8 @@ This example application consists of a public chat room made with Vue.js, socket
 The project does by no means display "best practices" or try to showcase the most effective way of dealing with socket.io and Vue.js. It's merely an example to give people an idea of how Vue.js and socket.io can be used for interactive real time applications. I have no plans of putting this code into production, whereas I haven't put much effort into good commenting, testing and refactoring. 
 
 ##Demo
-[http://chatdemo.zot.link/](http://chatdemo.zot.link/)
+Offline at the moment. Will publish it on an other test server soon. 
+~~[http://chatdemo.zot.link/](http://chatdemo.zot.link/)~~
 
 Log in to the chat from multiple browser tabs to test the chatting functionality with yourself if nobody else is online. 
 
