@@ -3,33 +3,35 @@ This example application consists of a public chat room made with Vue.js, socket
 
 The project does by no means display "best practices" or try to showcase the most effective way of dealing with socket.io and Vue.js. It's merely an example to give people an idea of how Vue.js and socket.io can be used for interactive real time applications. I have no plans of putting this code into production, whereas I haven't put much effort into good commenting, testing and refactoring. 
 
-##Demo
-[http://chatdemo.zot.link/](http://chatdemo.zot.link/)
+## Demo
+~~http://chatdemo.zot.link/~~
 
-Log in to the chat from multiple browser tabs to test the chatting functionality with yourself if nobody else is online. 
+~~Log in to the chat from multiple browser tabs to test the chatting functionality with yourself if nobody else is online.~~
 
-##Features
+Demo no longer available
+
+## Features
 * Customizable display name + gender
 * Multiple chat sessions
 * Unread message notification
 * User is logged out notification
 
-##Limitations
+## Limitations
 * It's only possible to chat with one other person in the same chat room
 * No smilies or multimedia features
 * No persistent chat logs
 * No persistent user accounts
 * Not optimized for devices with very small screens
 
-##Installation
+## Installation
 1. Clone the repo.
 2. Run "npm install" in the root directory.
 3. Run "npm install" in the "vue" directory.
 4. While still in the vue directory, run "npm run build". This will generate the app.js file. You'll get three jslint "no-undef" errors, just ignore these. 
 5. Navigate back to the root directory and start the application with "node webServer.js". 
 
-##Known bugs
+## Known bugs
 * If you add too many chat sessions the "session menu" bar will get too large and it will not be displayed correctly
 
-##Contact
+## Contact
 If you have any questions please use the contact details found at http://jimmyutterstrom.com/about/
